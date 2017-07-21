@@ -5,10 +5,10 @@ using UnityEngine;
 // can be modified for different weapons, armors, ect
 public class PlayerWeaponController : MonoBehaviour {
 	
-	public GameObject playerHand;
-	public GameObject EquippedWeapon { get; set; }
+	public GameObject playerHand; // empty var for our hand object
+	public GameObject EquippedWeapon { get; set; } // will/does have weapon interface
 
-	IWeapon equippedWeapon; //testing?
+	IWeapon equippedWeapon; //testing? or shorthand to the weapon interface
 	CharacterStats characterStats;
 
 	void Start()
@@ -32,7 +32,7 @@ public class PlayerWeaponController : MonoBehaviour {
 		equippedWeapon = EquippedWeapon.GetComponent<IWeapon> (); //testing?
 		equippedWeapon.Stats = itemToEquip.Stats;
 
-		//EquippedWeapon.GetComponent<IWeapon> ().Stats = itemToEquip.Stats; // do this to know what stats to remove when unequipped?
+		//EquippedWeapon.GetComponent<IWeapon> ().Stats = itemToEquip.Stats; //set weapon stats
 		EquippedWeapon.transform.SetParent (playerHand.transform); //set the parent of weapon's transform to the hand's transform
 		characterStats.AddStatBonus (itemToEquip.Stats); // add item's stats as bonus stats to the player
 		Debug.Log(equippedWeapon.Stats[0].CalculateFinalValue());
