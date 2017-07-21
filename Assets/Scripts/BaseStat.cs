@@ -33,13 +33,14 @@ public class BaseStat {
 	}
 
 	public void RemoveStatBonus(StatBonus statBonus)
-	{
-		this.StatModfiers.Remove (statBonus);
+	{	// look through our list for a StatBonus.BonusValue == the arg
+		this.StatModfiers.Remove (StatModfiers.Find (x => x.BonusValue == statBonus.BonusValue));
 	}
 
 	//Must be called to get base stat + all modifiers
 	public int CalculateFinalValue()
-	{							//as x
+	{	
+		this.FinalValue = 0;
 		this.StatModfiers.ForEach (x => this.FinalValue += x.BonusValue);
 		FinalValue += BaseValue;
 		return FinalValue;
