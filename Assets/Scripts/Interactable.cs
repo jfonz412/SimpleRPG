@@ -9,8 +9,8 @@ public class Interactable : MonoBehaviour {
 	[HideInInspector]
 	public NavMeshAgent playerAgent; //can't be private because this is passed around between objects
 
-	private bool hasInteracted;
-	// move to object before we interact with it
+	private bool hasInteracted; // move to object before we interact with it
+
 	// 'virtual' allows us to override this function
 	public virtual void MoveToInteraction(NavMeshAgent playerAgent) //in this case this is the player
 	{																//passed in from WorldInteraction
