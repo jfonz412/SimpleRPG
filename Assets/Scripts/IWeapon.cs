@@ -6,4 +6,5 @@ using UnityEngine;
 public interface IWeapon {
 	List<BaseStat> Stats  { get; set;} // attribute accessors for a list of BaseStats
 	void PerformAttack(); // a PerformAttack(); method
+	void PerformSpecialAttack();
 }

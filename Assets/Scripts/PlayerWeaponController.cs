@@ -43,12 +43,20 @@ public class PlayerWeaponController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.X)) {
 			PerformWeaponAttack ();
 		}
+		if (Input.GetKeyDown (KeyCode.Z)) {
+			PerformSpecialAttack ();
+		}
 	}
 
 
 	public void PerformWeaponAttack()
 	{
 		equippedWeapon.PerformAttack ();
+		//EquippedWeapon.GetComponent<IWeapon> ().PerformAttack ();
+	}
+	public void PerformSpecialAttack()
+	{
+		equippedWeapon.PerformSpecialAttack ();
 		//EquippedWeapon.GetComponent<IWeapon> ().PerformAttack ();
 	}
 }
