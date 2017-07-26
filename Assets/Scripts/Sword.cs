@@ -9,7 +9,7 @@ public class Sword : MonoBehaviour, IWeapon // our sword must meet the standards
 
 	public void PerformAttack ()
 	{
-		Debug.Log ("Sword Attack");
+		Debug.Log (this.name + "attack");
 	}
 		
 }

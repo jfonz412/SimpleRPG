@@ -38,6 +38,13 @@ public class PlayerWeaponController : MonoBehaviour {
 		Debug.Log(equippedWeapon.Stats[0].CalculateFinalValue());
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown (KeyCode.X)) {
+			PerformWeaponAttack ();
+		}
+	}
+
 
 	public void PerformWeaponAttack()
 	{
